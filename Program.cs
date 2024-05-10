@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
 using MyBlog.Data.Abstract;
 using MyBlog.Data.Concrete.EfCore;
@@ -14,11 +15,14 @@ builder.Services.AddScoped<IUserRepository,EfUserRepository>();
 builder.Services.AddScoped<ICommentRepository,EfCommentRepository>();
 builder.Services.AddScoped<IPostRepository, EfPostRepository>();
 
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie();
+
 var app = builder.Build();
 
 app.UseRouting();
 
-
+app.UseAuthentication();
+app.UseAuthorization();
 app.UseStaticFiles();
 
 SeedData.TestVerileriniDoldur(app);

@@ -123,3 +123,4 @@
 /Users/omerapaydin/Desktop/Back-end/net8.0/MyBlog/MyBlog/bin/Debug/net8.0/MyBlog.staticwebassets.runtime.json
 /Users/omerapaydin/Desktop/Back-end/net8.0/MyBlog/MyBlog/obj/Debug/net8.0/MyBlog.RazorAssemblyInfo.cache
 /Users/omerapaydin/Desktop/Back-end/net8.0/MyBlog/MyBlog/obj/Debug/net8.0/MyBlog.RazorAssemblyInfo.cs
+/Users/omerapaydin/Desktop/Back-end/net8.0/MyBlog/MyBlog/obj/Debug/net8.0/MyBlog.sourcelink.json
