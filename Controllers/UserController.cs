@@ -20,6 +20,11 @@ namespace MyBlog.Controllers
                 _userRepository = userRepository;
         }
 
+        public async Task<IActionResult> Logout(){
+            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+           
+             return RedirectToAction("Login","User");
+        }
         public IActionResult Login(){
             return View();
         }
@@ -56,7 +61,7 @@ namespace MyBlog.Controllers
              return RedirectToAction("Index","Posts");
 
                 }else {
-                    ModelState.AddModelError("","Kullanıcı adı veya şifre yanlış");
+                    ModelState.AddModelError("","Kullanıcı adı veya şifre kullanımda");
                 }
 
 
