@@ -25,7 +25,13 @@ namespace MyBlog.Controllers
            
              return RedirectToAction("Login","User");
         }
-        public IActionResult Login(){
+           public IActionResult Login()
+        {
+            if(User.Identity!.IsAuthenticated)
+            {
+                return RedirectToAction("Index", "Posts");
+            }
+
             return View();
         }
         [HttpPost]

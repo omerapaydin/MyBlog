@@ -42,25 +42,18 @@
             </div>
           </div>
           }
-          <hr class="my-4" />
           <div>
+            @if(User.Identity!.IsAuthenticated){
+            <hr class="my-4" />
             <h4 class="mb-3">Yorum Eke</h4>
-            <form method="post">
+            <form action="/posts/AddComment" method="post">
               <input type="hidden" name="PostId" value="@Model.PostId" />
               <input type="hidden" name="Url" value="@Model.Url" />
-              <div class="mb-3">
-                <label for="UserName" class="form-label">UserName</label>
-                <input
-                  type="text"
-                  name="UserName"
-                  id="UserName"
-                  class="form-control"
-                />
-              </div>
+
               <div class="mb-3">
                 <label for="Text" class="form-label">Yorum</label>
                 <textarea
-                  type="Text"
+                  type="text"
                   name="Text"
                   rows="3"
                   id="Text"
@@ -71,6 +64,11 @@
                 <button type="submit" class="btn btn-primary">Kaydet</button>
               </div>
             </form>
+            }else {
+            <p>
+              Yorum yapmak için giriş yapın. <a href="/user/login">Login</a>
+            </p>
+            }
           </div>
         </div>
       </div>

@@ -45,6 +45,7 @@ namespace MyBlog.Data.Concrete.EfCore
                             Comments = new List<Comment>{ 
                             new Comment { Text = "Çok havalı",PublishedOn =  DateTime.Now.AddDays(-20),UserId = 1},
                             new Comment { Text = "Çok iyi",PublishedOn =  DateTime.Now.AddDays(-10),UserId = 2},
+                            new Comment { Text = "Fena",PublishedOn =  DateTime.Now.AddDays(-10),UserId = 2},
                             }
                             },
                         new Post{
