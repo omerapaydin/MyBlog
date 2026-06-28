@@ -32,7 +32,57 @@
     <footer>
         <p>© 2026 ByRoot. Tüm hakları saklıdır.</p>
     </footer>
+    <script>
+            const projectRows = document.querySelectorAll(".project-row");
+            const projectPagination = document.getElementById("projectPagination");
 
+            const projectsPerPage = 2;
+            let currentPage = 1;
+
+            const totalPages = Math.ceil(projectRows.length / projectsPerPage);
+
+            function showProjectPage(page) {
+                currentPage = page;
+
+                projectRows.forEach((project, index) => {
+                    const start = (page - 1) * projectsPerPage;
+                    const end = start + projectsPerPage;
+
+                    project.style.display =
+                        index >= start && index < end ? "flex" : "none";
+                });
+
+                createProjectPagination();
+            }
+
+            function createProjectPagination() {
+                projectPagination.innerHTML = "";
+
+                for (let i = 1; i <= totalPages; i++) {
+                    const button = document.createElement("button");
+
+                    button.textContent = i;
+                    button.classList.add("project-page-btn");
+
+                    if (i === currentPage) {
+                        button.classList.add("active");
+                    }
+
+                    button.addEventListener("click", () => {
+                        showProjectPage(i);
+
+                        document.getElementById("projects").scrollIntoView({
+                            behavior: "smooth",
+                            block: "start"
+                        });
+                    });
+
+                    projectPagination.appendChild(button);
+                }
+            }
+
+            showProjectPage(1);
+    </script>
 </body>
 
 </html>

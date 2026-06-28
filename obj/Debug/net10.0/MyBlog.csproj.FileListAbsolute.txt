@@ -30,4 +30,4 @@
 /Users/omerapaydin/Desktop/omerapaydin/MyBlog/obj/Debug/net10.0/MyBlog.pdb
 /Users/omerapaydin/Desktop/omerapaydin/MyBlog/obj/Debug/net10.0/MyBlog.genruntimeconfig.cache
 /Users/omerapaydin/Desktop/omerapaydin/MyBlog/obj/Debug/net10.0/ref/MyBlog.dll
-/Users/omerapaydin/Desktop/omerapaydin/MyBlog/obj/Debug/net10.0/compressed/mdk8he1d5b-{0}-3vxwazfozg-3vxwazfozg.gz
+/Users/omerapaydin/Desktop/omerapaydin/MyBlog/obj/Debug/net10.0/compressed/mdk8he1d5b-{0}-8mig4xoafi-8mig4xoafi.gz
