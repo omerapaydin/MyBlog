@@ -1,52 +1,97 @@
 <section class="hero-profile">
-    <div class="profile-card">
-        <div class="side-note side-left">
-            <i class="bi bi-code-slash"></i>
-            <span>Full-Stack</span>
+    <div class="hero-profile-layout">
+
+        <!-- MAIN PROFILE CARD -->
+        <div class="profile-card">
+            <div class="side-note side-left">
+                <i class="bi bi-code-slash"></i>
+                <span>Full-Stack</span>
+            </div>
+
+            <div class="side-note side-right">
+                <i class="bi bi-shield-lock"></i>
+                <span>Web Security</span>
+            </div>
+
+            <div class="orbit-dot dot-one"></div>
+            <div class="orbit-dot dot-two"></div>
+
+            <div class="profile-img-box">
+                <img src="~/images/omerapaydin.jpg" alt="Ömer Apaydın" />
+                <span class="profile-icon">
+                    <i class="bi bi-house-door-fill"></i>
+                </span>
+            </div>
+
+            <span class="mini-badge">ByRoot Founder</span>
+
+            <h1>Ömer Apaydın</h1>
+
+            <h2>
+                ByRoot Kurucusu / Bilgisayar Mühendisi / Software Developer
+            </h2>
+
+            <p>
+                ByRoot’un kurucusu olarak modern web siteleri, e-ticaret sistemleri,
+                siber güvenlik ve özel yazılım çözümleri geliştiriyorum. Teknoloji,
+                tasarım ve güvenliği bir araya getirerek markalar için güçlü dijital
+                deneyimler oluşturuyorum.
+            </p>
+
+            <div class="profile-tags">
+                <span>Web & .NET</span>
+                <span>iOS & Swift</span>
+                <span>Cyber Security</span>
+                <span>Project Management</span>
+                <span>UX/UI Design</span>
+            </div>
+
+            <div class="hero-buttons">
+                <a href="#projects" class="btn-dark">Projelerimi Gör</a>
+                <a href="#contact" class="btn-light">İletişim Kur</a>
+            </div>
         </div>
 
-        <div class="side-note side-right">
-            <i class="bi bi-shield-lock"></i>
-            <span>Web Security</span>
-        </div>
+        <!-- SMALL BYROOT CARD -->
+        <aside class="byroot-profile-card">
+            <div class="byroot-orbit byroot-orbit-one"></div>
+            <div class="byroot-orbit byroot-orbit-two"></div>
 
-        <div class="orbit-dot dot-one"></div>
-        <div class="orbit-dot dot-two"></div>
-        <div class="profile-img-box">
-            <img src="~/images/omerapaydin.jpg" alt="Ömer Apaydın" />
-            <span class="profile-icon">
-                <i class="bi bi-house-door-fill"></i>
-            </span>
-        </div>
+            <div class="byroot-logo-box">
+                <div class="byroot-logo">
+                    <img src="~/images/ByRoot.jpg" alt="ByRoot Logo" />
+                </div>
 
-        <span class="mini-badge">ByRoot Founder</span>
+                <span class="byroot-logo-icon">
+                    <i class="bi bi-stars"></i>
+                </span>
+            </div>
 
-        <h1>Ömer Apaydın</h1>
+            <span class="mini-badge">Digital Studio</span>
 
-        <h2>
-            ByRoot Kurucusu / Bilgisayar Mühendisi / Full-Stack Web Developer
-        </h2>
+            <h2>ByRoot</h2>
 
-        <p>
-            ByRoot’un kurucusu olarak modern web siteleri, e-ticaret sistemleri,
-            siber güvenlik ve özel yazılım çözümleri geliştiriyorum. Teknoloji,
-            tasarım ve güvenliği bir araya getirerek markalar için güçlü dijital
-            deneyimler oluşturuyorum.
-        </p>
+            <h3>Web, Software & Security</h3>
 
-        <div class="profile-tags">
-            <span>C#</span>
-            <span>ASP.NET Core</span>
-            <span>Cybersecurity</span>
-            <span>iOS</span>
-            <span>SEO</span>
-            <span>UI/UX</span>
-        </div>
+            <p>
+                Modern web siteleri, e-ticaret çözümleri, güvenli yazılım
+                altyapıları ve markalara özel dijital deneyimler geliştirir.
+            </p>
 
-        <div class="hero-buttons">
-            <a href="#projects" class="btn-dark">Projelerimi Gör</a>
-            <a href="#contact" class="btn-light">İletişim Kur</a>
-        </div>
+            <div class="byroot-tags">
+                <span>.NET</span>
+                <span>Web</span>
+                <span>E-Commerce</span>
+                <span>Security</span>
+                <span>SEO</span>
+            </div>
+
+            <a href="#projects" class="byroot-card-btn">
+                ByRoot Projeleri
+                <i class="bi bi-arrow-right"></i>
+            </a>
+        </aside>
+
     </div>
 </section>
 
@@ -79,7 +124,7 @@
     <div class="grid-3">
         <div class="service-card">
             <i class="bi bi-code-slash"></i>
-            <h3>Full-Stack Web</h3>
+            <h3>Web & .NET Development</h3>
             <p>
                 ASP.NET Core MVC, Entity Framework, Identity, admin panel,
                 veritabanı ve dinamik web uygulamaları geliştiriyorum.
@@ -87,17 +132,8 @@
         </div>
 
         <div class="service-card">
-            <i class="bi bi-shield-lock"></i>
-            <h3>Siber Güvenlik</h3>
-            <p>
-                Web güvenliği, temel zafiyet analizi, güvenli kodlama, sistem
-                güvenliği ve güvenlik farkındalığı üzerine çalışıyorum.
-            </p>
-        </div>
-
-        <div class="service-card">
             <i class="bi bi-phone"></i>
-            <h3>iOS Geliştirme</h3>
+            <h3>iOS & Swift</h3>
             <p>
                 Swift, SwiftUI ve mobil uygulama geliştirme alanında projeler ve
                 arayüz çalışmaları yapıyorum.
@@ -105,17 +141,26 @@
         </div>
 
         <div class="service-card">
-            <i class="bi bi-cart"></i>
-            <h3>E-Ticaret</h3>
+            <i class="bi bi-shield-lock"></i>
+            <h3>Cyber Security</h3>
             <p>
-                Ürün yönetimi, kategori sistemi, sepet, sipariş ve admin panel
-                içeren e-ticaret altyapıları geliştiriyorum.
+                Web güvenliği, temel zafiyet analizi, güvenli kodlama, sistem
+                güvenliği ve güvenlik farkındalığı üzerine çalışıyorum.
+            </p>
+        </div>
+
+        <div class="service-card">
+            <i class="bi bi-kanban"></i>
+            <h3>Project Management</h3>
+            <p>
+                Proje planlama, süreç yönetimi, ihtiyaç analizi ve sürdürülebilir
+                geliştirme yaklaşımıyla çalışıyorum.
             </p>
         </div>
 
         <div class="service-card">
             <i class="bi bi-palette"></i>
-            <h3>UI/UX Tasarım</h3>
+            <h3>UX/UI Design</h3>
             <p>
                 Sade, kaliteli, modern ve kullanıcı dostu arayüzler tasarlamaya önem
                 veriyorum.
@@ -124,7 +169,7 @@
 
         <div class="service-card">
             <i class="bi bi-search"></i>
-            <h3>SEO & Performans</h3>
+            <h3>SEO & Performance</h3>
             <p>
                 Web sitelerinin hızlı, erişilebilir, mobil uyumlu ve arama
                 motorlarına uygun olmasına dikkat ediyorum.
@@ -153,7 +198,9 @@
         <div class="list-item">
             <div>
                 <h3>Siber Güvenlik Stajı</h3>
-                <p>Linux güvenliği, SSH hardening, zafiyet analizi ve raporlama.</p>
+                <p>
+                    Linux güvenliği, SSH hardening, zafiyet analizi ve raporlama.
+                </p>
             </div>
             <span>Security</span>
         </div>
@@ -161,7 +208,9 @@
         <div class="list-item">
             <div>
                 <h3>Web Development</h3>
-                <p>ASP.NET Core, MVC, Entity Framework ve modern web mimarileri.</p>
+                <p>
+                    ASP.NET Core, MVC, Entity Framework ve modern web mimarileri.
+                </p>
             </div>
             <span>Web</span>
         </div>
@@ -185,7 +234,7 @@
                 </p>
 
                 <div class="small-tags">
-                    <span>C#</span>
+                    <span>Web & .NET</span>
                     <span>MVC</span>
                     <span>Identity</span>
                 </div>
@@ -206,7 +255,7 @@
                 <div class="small-tags">
                     <span>C#</span>
                     <span>EF Core</span>
-                    <span>Admin</span>
+                    <span>Admin Panel</span>
                 </div>
             </div>
 
@@ -225,7 +274,7 @@
                 <div class="small-tags">
                     <span>API</span>
                     <span>React</span>
-                    <span>C#</span>
+                    <span>.NET</span>
                 </div>
             </div>
 
@@ -252,7 +301,7 @@
         </article>
 
         <article class="blog-card">
-            <span>Cybersecurity</span>
+            <span>Cyber Security</span>
             <h3>Web Güvenliğinde Dikkat Edilmesi Gerekenler</h3>
             <p>
                 SQL Injection, XSS, form güvenliği ve temel güvenlik prensipleri
