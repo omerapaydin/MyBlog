@@ -23,8 +23,8 @@
         <nav>
             <a href="#about">Hakkımda</a>
             <a href="#fields">Alanlar</a>
+            <a href="#blog">Eğitim</a>
             <a href="#projects">Projeler</a>
-            <a href="#blog">Blog</a>
             <a href="#contact">İletişim</a>
         </nav>
     </header>
@@ -33,78 +33,91 @@
         <p>© 2026 ByRoot. Tüm hakları saklıdır.</p>
     </footer>
     <script>
-            const filterButtons = document.querySelectorAll(".filter-btn");
-            const projectRows = document.querySelectorAll(".project-row");
+            document.addEventListener("DOMContentLoaded", function () {
+                const filterButtons = document.querySelectorAll(".filter-btn");
+                const allProjects = Array.from(document.querySelectorAll(".project-row"));
+                const projectPagination = document.getElementById("projectPagination");
 
-            filterButtons.forEach(button => {
-                button.addEventListener("click", () => {
-                    const filterValue = button.getAttribute("data-filter");
+                if (!projectPagination || allProjects.length === 0) {
+                    return;
+                }
 
-                    filterButtons.forEach(btn => btn.classList.remove("active"));
-                    button.classList.add("active");
+                const projectsPerPage = 3;
+                let currentPage = 1;
+                let currentFilter = "all";
 
-                    projectRows.forEach(project => {
-                        const projectCategory = project.getAttribute("data-category");
-
-                        if (filterValue === "all" || projectCategory === filterValue) {
-                            project.style.display = "flex";
-                        } else {
-                            project.style.display = "none";
-                        }
-                    });
-                });
-            });
-    </script>
-    <script>
-            const projectRows = document.querySelectorAll(".project-row");
-            const projectPagination = document.getElementById("projectPagination");
-
-            const projectsPerPage = 3;
-            let currentPage = 1;
-
-            const totalPages = Math.ceil(projectRows.length / projectsPerPage);
-
-            function showProjectPage(page) {
-                currentPage = page;
-
-                projectRows.forEach((project, index) => {
-                    const start = (page - 1) * projectsPerPage;
-                    const end = start + projectsPerPage;
-
-                    project.style.display =
-                        index >= start && index < end ? "flex" : "none";
-                });
-
-                createProjectPagination();
-            }
-
-            function createProjectPagination() {
-                projectPagination.innerHTML = "";
-
-                for (let i = 1; i <= totalPages; i++) {
-                    const button = document.createElement("button");
-
-                    button.textContent = i;
-                    button.classList.add("project-page-btn");
-
-                    if (i === currentPage) {
-                        button.classList.add("active");
+                function getFilteredProjects() {
+                    if (currentFilter === "all") {
+                        return allProjects;
                     }
 
-                    button.addEventListener("click", () => {
-                        showProjectPage(i);
+                    return allProjects.filter(project =>
+                        project.getAttribute("data-category") === currentFilter
+                    );
+                }
 
-                        document.getElementById("projects").scrollIntoView({
-                            behavior: "smooth",
-                            block: "start"
-                        });
+                function showProjects() {
+                    const filteredProjects = getFilteredProjects();
+                    const totalPages = Math.ceil(filteredProjects.length / projectsPerPage);
+
+                    allProjects.forEach(project => {
+                        project.style.display = "none";
                     });
 
-                    projectPagination.appendChild(button);
-                }
-            }
+                    const start = (currentPage - 1) * projectsPerPage;
+                    const end = start + projectsPerPage;
 
-            showProjectPage(1);
+                    filteredProjects.slice(start, end).forEach(project => {
+                        project.style.display = "flex";
+                    });
+
+                    createPagination(totalPages);
+                }
+
+                function createPagination(totalPages) {
+                    projectPagination.innerHTML = "";
+
+                    if (totalPages <= 1) {
+                        return;
+                    }
+
+                    for (let i = 1; i <= totalPages; i++) {
+                        const button = document.createElement("button");
+                        button.textContent = i;
+                        button.classList.add("project-page-btn");
+
+                        if (i === currentPage) {
+                            button.classList.add("active");
+                        }
+
+                        button.addEventListener("click", function () {
+                            currentPage = i;
+                            showProjects();
+
+                            document.getElementById("projects").scrollIntoView({
+                                behavior: "smooth",
+                                block: "start"
+                            });
+                        });
+
+                        projectPagination.appendChild(button);
+                    }
+                }
+
+                filterButtons.forEach(button => {
+                    button.addEventListener("click", function () {
+                        currentFilter = button.getAttribute("data-filter");
+                        currentPage = 1;
+
+                        filterButtons.forEach(btn => btn.classList.remove("active"));
+                        button.classList.add("active");
+
+                        showProjects();
+                    });
+                });
+
+                showProjects();
+            });
     </script>
 </body>
 

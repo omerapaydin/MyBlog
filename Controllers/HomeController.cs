@@ -19,7 +19,7 @@ namespace MyBlog.Controllers
         {
             var projects = await _context.Projects
                 .Include(x => x.Category)
-                .OrderByDescending(x => x.PublishedOn)
+                .OrderBy(x => x.PublishedOn)
                 .ToListAsync();
 
             return View(projects);

@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MyBlog.Data;
 
@@ -10,9 +11,11 @@ using MyBlog.Data;
 namespace MyBlog.Migrations
 {
     [DbContext(typeof(IdentityContex))]
-    partial class IdentityContexModelSnapshot : ModelSnapshot
+    [Migration("20260628221853_SeedData4")]
+    partial class SeedData4
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "10.0.9");
@@ -299,7 +302,7 @@ namespace MyBlog.Migrations
                         new
                         {
                             ProjectId = 3,
-                            CategoryId = 3,
+                            CategoryId = 1,
                             Description = "Etik hackerlık, ağ güvenliği, bilgi toplama, zafiyet analizi, XSS, SQL enjeksiyonu, web pentesting, parola hash kırma ve sosyal mühendislik konularını içeren siber güvenlik eğitim notları ve uygulamalı çalışmalar.",
                             Image = "cyber1.jpg",
                             Link = "https://github.com/omerapaydin/SiberGuvenlik",
@@ -319,7 +322,7 @@ namespace MyBlog.Migrations
                         new
                         {
                             ProjectId = 5,
-                            CategoryId = 1,
+                            CategoryId = 2,
                             Description = "Psikologlar için danışan randevu oluşturma, müsait saat seçimi, iletişim formu ve admin panel üzerinden randevu yönetimi özellikleri bulunan modern web uygulaması.",
                             Image = "psiko1.jpg",
                             Link = "https://github.com/omerapaydin",
@@ -329,7 +332,7 @@ namespace MyBlog.Migrations
                         new
                         {
                             ProjectId = 6,
-                            CategoryId = 4,
+                            CategoryId = 3,
                             Description = "Restoran ve kafeler için kategori, ürün, fiyat ve görsel yönetimi bulunan; müşterilerin QR kod üzerinden menüye kolayca ulaşmasını sağlayan dinamik web uygulaması.",
                             Image = "qr.jpg",
                             Link = "https://github.com/omerapaydin",
@@ -342,7 +345,7 @@ namespace MyBlog.Migrations
                             CategoryId = 4,
                             Description = "Proje planlama, ihtiyaç analizi, görev takibi ve süreç yönetimi odaklı proje yönetimi çalışması.",
                             Image = "agile1.jpg",
-                            Link = "https://github.com/omerapaydin/AgileProjeYonetimi",
+                            Link = "https://github.com/omerapaydin",
                             PublishedOn = new DateTime(2026, 6, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Title = "Project Management Case"
                         });

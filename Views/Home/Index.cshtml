@@ -1,17 +1,13 @@
 @model List<Project>
 
 @{
-
     var categories = Model
-
         .Where(x => x.Category != null)
-
-        .Select(x => x.Category!.Name)
-
-        .Distinct()
-
+        .Select(x => x.Category!)
+        .GroupBy(x => x.CategoryId)
+        .Select(g => g.First())
+        .OrderBy(x => x.CategoryId)
         .ToList();
-
 }
 <section class="hero-profile">
     <div class="hero-profile-layout">
@@ -59,6 +55,24 @@
                 <span>Cyber Security</span>
                 <span>Project Management</span>
                 <span>UX/UI Design</span>
+            </div>
+
+            <div class="profile-socials">
+                <a href="https://www.instagram.com/omerapaydin" target="_blank" aria-label="Instagram">
+                    <i class="bi bi-instagram"></i>
+                </a>
+
+                <a href="https://www.linkedin.com/in/omerapaydin/" target="_blank" aria-label="LinkedIn">
+                    <i class="bi bi-linkedin"></i>
+                </a>
+
+                <a href="https://github.com/omerapaydin" target="_blank" aria-label="GitHub">
+                    <i class="bi bi-github"></i>
+                </a>
+
+                <a href="mailto:omerapaydin90@gmail.com" aria-label="Mail">
+                    <i class="bi bi-envelope-fill"></i>
+                </a>
             </div>
 
             <div class="hero-buttons">
@@ -197,7 +211,7 @@
     </div>
 </section>
 
-<section class="section">
+<section id="blog" class="section">
     <div class="section-title">
         <span>03</span>
         <h2>Eğitimler</h2>
@@ -274,33 +288,20 @@
         <button class="filter-btn active" data-filter="all">Tümü</button>
 
         @foreach (var ctg in categories)
-
         {
-
-            var categorySlug = ctg?
-
+            var categorySlug = ctg.Name?
                 .ToLowerInvariant()
-
                 .Replace(" ", "")
-
                 .Replace("ğ", "g")
-
                 .Replace("ı", "i")
-
                 .Replace("ö", "o")
-
                 .Replace("ü", "u")
-
                 .Replace("ş", "s")
-
                 .Replace("ç", "c");
 
             <button class="filter-btn" data-filter="@categorySlug">
-
-                @ctg
-
+                @ctg.Name
             </button>
-
         }
 
     </div>
