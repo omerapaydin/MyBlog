@@ -29,7 +29,48 @@ a {
 }
 
 /* NAVBAR */
+.project-preview-card {
+    background: #ffffff;
+    border: 1px solid rgba(47, 44, 39, 0.12);
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 24px 60px rgba(47, 44, 39, 0.14);
+}
 
+.browser-bar {
+    height: 42px;
+    background: #2f2c27;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0 16px;
+}
+
+.browser-bar span {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #f4f1ea;
+    opacity: 0.8;
+}
+
+.preview-image {
+    width: 100%;
+    height: 360px;
+    background: #f4f1ea;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.preview-image img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    object-position: top center;
+    display: block;
+}
 .navbar {
     width: min(1180px, 92%);
     margin: 1px auto;
