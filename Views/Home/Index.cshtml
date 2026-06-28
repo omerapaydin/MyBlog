@@ -1,3 +1,4 @@
+@model List<Project>
 <section class="hero-profile">
     <div class="hero-profile-layout">
 
@@ -229,96 +230,31 @@
 
     <div class="project-list">
 
-        <div class="project-row">
-            <div class="project-image">
-                <img src="~/images/byroot-project.jpg" alt="ByRoot Projesi">
-            </div>
-
-            <div class="project-content">
-                <span class="category">ASP.NET Core</span>
-                <h3>ByRoot</h3>
-                <p>
-                    Hizmetler, projeler, iletişim ve randevu sistemi içeren kişisel
-                    marka ve ajans web sitesi.
-                </p>
-
-                <div class="small-tags">
-                    <span>Web & .NET</span>
-                    <span>MVC</span>
-                    <span>Identity</span>
+        @foreach (var prj in Model)
+        {
+            <div class="project-row">
+                <div class="project-image">
+                    <img src="~/images/@prj.Image" alt="ByRoot Projesi">
                 </div>
-            </div>
 
-            <a href="project-detail.html">Detay</a>
-        </div>
+                <div class="project-content">
+                    <span class="category">@prj.Category</span>
+                    <h3>@prj.Title</h3>
+                    <p>
+                        @prj.Description
+                    </p>
 
-        <div class="project-row">
-            <div class="project-image">
-                <img src="~/images/carapp-project.jpg" alt="CarApp Projesi">
-            </div>
-
-            <div class="project-content">
-                <span class="category">Car Listing</span>
-                <h3>CarApp</h3>
-                <p>
-                    Araç listeleme, filtreleme, ilan yönetimi ve admin panel yapısına
-                    sahip otomobil projesi.
-                </p>
-
-                <div class="small-tags">
-                    <span>C#</span>
-                    <span>EF Core</span>
-                    <span>Admin Panel</span>
+                    @* <div class="small-tags">
+                        <span>Web & .NET</span>
+                        <span>MVC</span>
+                        <span>Identity</span>
+                    </div> *@
                 </div>
+
+                <a href="@prj.Link" href="project-detail.html">Detay</a>
             </div>
+        }
 
-            <a href="project-detail.html">Detay</a>
-        </div>
-
-        <div class="project-row">
-            <div class="project-image">
-                <img src="~/images/qrmenu-project.jpg" alt="QrMenu Projesi">
-            </div>
-
-            <div class="project-content">
-                <span class="category">QR Menu</span>
-                <h3>QrMenu</h3>
-                <p>
-                    Restoranlar için kategori, ürün ve görsel yönetimi bulunan dinamik
-                    QR menü uygulaması.
-                </p>
-
-                <div class="small-tags">
-                    <span>API</span>
-                    <span>React</span>
-                    <span>.NET</span>
-                </div>
-            </div>
-
-            <a href="project-detail.html">Detay</a>
-        </div>
-        <div class="project-row">
-            <div class="project-image">
-                <img src="~/images/qrmenu-project.jpg" alt="QrMenu Projesi">
-            </div>
-
-            <div class="project-content">
-                <span class="category">QR Menu</span>
-                <h3>QrMenu</h3>
-                <p>
-                    Restoranlar için kategori, ürün ve görsel yönetimi bulunan dinamik
-                    QR menü uygulaması.
-                </p>
-
-                <div class="small-tags">
-                    <span>API</span>
-                    <span>React</span>
-                    <span>.NET</span>
-                </div>
-            </div>
-
-            <a href="project-detail.html">Detay</a>
-        </div>
 
     </div>
 
@@ -335,7 +271,7 @@
         </p>
 
         <div class="contact-links">
-            <a href="instagram.com/omerapaydin"><i class="bi bi-instagram"></i> Instagram</a>
+            <a href="https://www.instagram.com/omerapaydin"><i class="bi bi-instagram"></i> Instagram</a>
             <a href="https://www.linkedin.com/in/omerapaydin/"><i class="bi bi-linkedin"></i> LinkedIn</a>
             <a href="https://github.com/omerapaydin"><i class="bi bi-github"></i> GitHub</a>
             <a href="mailto:omerapaydin90@gmail.com"><i class="bi bi-envelope"></i> Mail</a>

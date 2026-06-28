@@ -177,7 +177,7 @@ a {
     font-size: 17px;
 }
 
-.profile-tags,
+/* .profile-tags,
 .small-tags {
     display: flex;
     justify-content: center;
@@ -188,14 +188,14 @@ a {
 
 .profile-tags span,
 .small-tags span {
-    padding: 8px 13px;
+    padding: 5px 10px;
     border-radius: 999px;
     border: 1px solid var(--border);
     background: var(--bg-main);
     color: var(--accent-dark);
     font-size: 13px;
     font-weight: 800;
-}
+} */
 
 .hero-buttons {
     margin-top: 32px;
