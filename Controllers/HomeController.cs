@@ -12,5 +12,9 @@ namespace MyBlog.Controllers
         {
             return View();
         }
+        public IActionResult ProjectDetails()
+        {
+            return View();
+        }
     }
 }
