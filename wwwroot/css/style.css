@@ -1243,3 +1243,36 @@ footer {
         border-radius: 20px;
     }
 }
+
+.project-filter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 25px 0 35px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    border: 1px solid #2f2c27;
+    background: transparent;
+    color: #2f2c27;
+    padding: 9px 18px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.filter-btn:hover {
+    background: #2f2c27;
+    color: #f4f1ea;
+    transform: translateY(-2px);
+}
+
+.filter-btn.active {
+    background: #2f2c27;
+    color: #f4f1ea;
+}

@@ -33,10 +33,33 @@
         <p>© 2026 ByRoot. Tüm hakları saklıdır.</p>
     </footer>
     <script>
+            const filterButtons = document.querySelectorAll(".filter-btn");
+            const projectRows = document.querySelectorAll(".project-row");
+
+            filterButtons.forEach(button => {
+                button.addEventListener("click", () => {
+                    const filterValue = button.getAttribute("data-filter");
+
+                    filterButtons.forEach(btn => btn.classList.remove("active"));
+                    button.classList.add("active");
+
+                    projectRows.forEach(project => {
+                        const projectCategory = project.getAttribute("data-category");
+
+                        if (filterValue === "all" || projectCategory === filterValue) {
+                            project.style.display = "flex";
+                        } else {
+                            project.style.display = "none";
+                        }
+                    });
+                });
+            });
+    </script>
+    <script>
             const projectRows = document.querySelectorAll(".project-row");
             const projectPagination = document.getElementById("projectPagination");
 
-            const projectsPerPage = 2;
+            const projectsPerPage = 3;
             let currentPage = 1;
 
             const totalPages = Math.ceil(projectRows.length / projectsPerPage);

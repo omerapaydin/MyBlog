@@ -1,4 +1,18 @@
 @model List<Project>
+
+@{
+
+    var categories = Model
+
+        .Where(x => x.Category != null)
+
+        .Select(x => x.Category!.Name)
+
+        .Distinct()
+
+        .ToList();
+
+}
 <section class="hero-profile">
     <div class="hero-profile-layout">
 
@@ -186,25 +200,29 @@
 <section class="section">
     <div class="section-title">
         <span>03</span>
-        <h2>Sertifikalar</h2>
+        <h2>Eğitimler</h2>
     </div>
 
     <div class="list-box">
         <div class="list-item">
             <div>
-                <h3>SEO Eğitimi</h3>
+                <h3>Bilgisayar Mühendisliği / Arel Üniversitesi</h3>
                 <p>
-                    Arama motoru optimizasyonu, teknik SEO ve içerik optimizasyonu.
+                    Bilgisayar Mühendisliği bölümünden mezun oldum. Yazılım geliştirme,
+                    web teknolojileri, mobil uygulama geliştirme ve siber güvenlik alanlarında
+                    kendimi geliştirdim.
                 </p>
             </div>
-            <span>SEO</span>
+            <span>Education</span>
         </div>
 
         <div class="list-item">
             <div>
                 <h3>Siber Güvenlik Stajı</h3>
                 <p>
-                    Linux güvenliği, SSH hardening, zafiyet analizi ve raporlama.
+                    Siber güvenlik stajım süresince Linux güvenliği, SSH hardening,
+                    zafiyet analizi, güvenlik raporlaması ve temel ağ güvenliği konularında
+                    uygulamalı deneyim kazandım.
                 </p>
             </div>
             <span>Security</span>
@@ -212,12 +230,36 @@
 
         <div class="list-item">
             <div>
-                <h3>Web Development</h3>
+                <h3>Web Full Stack Development</h3>
                 <p>
-                    ASP.NET Core, MVC, Entity Framework ve modern web mimarileri.
+                    ASP.NET Core, MVC, Entity Framework, JavaScript, React ve modern web
+                    mimarileri üzerine full stack web geliştirme alanında çalışmalar yaptım.
                 </p>
             </div>
             <span>Web</span>
+        </div>
+
+        <div class="list-item">
+            <div>
+                <h3>iOS Mobil Uygulama Geliştirme</h3>
+                <p>
+                    Swift, SwiftUI ve iOS mobil uygulama geliştirme alanlarında eğitimler aldım
+                    ve kullanıcı odaklı mobil arayüzler geliştirme üzerine çalışmalar yaptım.
+                </p>
+            </div>
+            <span>iOS</span>
+        </div>
+
+        <div class="list-item">
+            <div>
+                <h3>Sertifikalar ve Yetkinlikler</h3>
+                <p>
+                    Web full stack development, React, JavaScript, Swift, SwiftUI, iOS mobil
+                    uygulama geliştirme, siber güvenlik ve proje yönetimi alanlarında
+                    sertifikalara sahibim.
+                </p>
+            </div>
+            <span>Certificates</span>
         </div>
     </div>
 </section>
@@ -227,34 +269,72 @@
         <span>04</span>
         <h2>Projelerim</h2>
     </div>
+    <div class="project-filter">
+
+        <button class="filter-btn active" data-filter="all">Tümü</button>
+
+        @foreach (var ctg in categories)
+
+        {
+
+            var categorySlug = ctg?
+
+                .ToLowerInvariant()
+
+                .Replace(" ", "")
+
+                .Replace("ğ", "g")
+
+                .Replace("ı", "i")
+
+                .Replace("ö", "o")
+
+                .Replace("ü", "u")
+
+                .Replace("ş", "s")
+
+                .Replace("ç", "c");
+
+            <button class="filter-btn" data-filter="@categorySlug">
+
+                @ctg
+
+            </button>
+
+        }
+
+    </div>
 
     <div class="project-list">
 
         @foreach (var prj in Model)
         {
-            <div class="project-row">
+            var categorySlug = prj.Category?.Name?
+                .ToLowerInvariant()
+                .Replace(" ", "")
+                .Replace("ğ", "g")
+                .Replace("ı", "i")
+                .Replace("ö", "o")
+                .Replace("ü", "u")
+                .Replace("ş", "s")
+                .Replace("ç", "c");
+
+            <div class="project-row" data-category="@categorySlug">
                 <div class="project-image">
                     <img src="~/images/@prj.Image" alt="ByRoot Projesi">
                 </div>
 
                 <div class="project-content">
-                    <span class="category">@prj.Category</span>
+                    <span class="category">@prj.Category?.Name</span>
                     <h3>@prj.Title</h3>
                     <p>
                         @prj.Description
                     </p>
-
-                    @* <div class="small-tags">
-                        <span>Web & .NET</span>
-                        <span>MVC</span>
-                        <span>Identity</span>
-                    </div> *@
                 </div>
 
-                <a href="@prj.Link" href="project-detail.html">Detay</a>
+                <a href="@prj.Link">Detay</a>
             </div>
         }
-
 
     </div>
 

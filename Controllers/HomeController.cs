@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using MyBlog.Data;
 
 namespace MyBlog.Controllers
@@ -14,9 +15,13 @@ namespace MyBlog.Controllers
         {
             _context = contex;
         }
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            var projects = _context.Projects.ToList();
+            var projects = await _context.Projects
+                .Include(x => x.Category)
+                .OrderByDescending(x => x.PublishedOn)
+                .ToListAsync();
+
             return View(projects);
         }
         public IActionResult ByRootDetay()
