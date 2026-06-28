@@ -30,7 +30,6 @@
 /Users/omerapaydin/Desktop/omerapaydin/MyBlog/obj/Debug/net10.0/MyBlog.pdb
 /Users/omerapaydin/Desktop/omerapaydin/MyBlog/obj/Debug/net10.0/MyBlog.genruntimeconfig.cache
 /Users/omerapaydin/Desktop/omerapaydin/MyBlog/obj/Debug/net10.0/ref/MyBlog.dll
-/Users/omerapaydin/Desktop/omerapaydin/MyBlog/obj/Debug/net10.0/compressed/mdk8he1d5b-{0}-c1w1y8hnrm-c1w1y8hnrm.gz
 /Users/omerapaydin/Desktop/omerapaydin/MyBlog/bin/Debug/net10.0/Humanizer.dll
 /Users/omerapaydin/Desktop/omerapaydin/MyBlog/bin/Debug/net10.0/Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 /Users/omerapaydin/Desktop/omerapaydin/MyBlog/bin/Debug/net10.0/Microsoft.Build.Framework.dll
@@ -149,3 +148,4 @@
 /Users/omerapaydin/Desktop/omerapaydin/MyBlog/bin/Debug/net10.0/runtimes/win-x86/native/e_sqlite3.dll
 /Users/omerapaydin/Desktop/omerapaydin/MyBlog/obj/Debug/net10.0/MyBlog.csproj.AssemblyReference.cache
 /Users/omerapaydin/Desktop/omerapaydin/MyBlog/obj/Debug/net10.0/MyBlog.csproj.Up2Date
+/Users/omerapaydin/Desktop/omerapaydin/MyBlog/obj/Debug/net10.0/compressed/mdk8he1d5b-{0}-m9ejm5yyn9-m9ejm5yyn9.gz

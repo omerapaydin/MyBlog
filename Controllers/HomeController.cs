@@ -19,6 +19,10 @@ namespace MyBlog.Controllers
             var projects = _context.Projects.ToList();
             return View(projects);
         }
+        public IActionResult ByRootDetay()
+        {
+            return View();
+        }
         public IActionResult ProjectDetails()
         {
             return View();
