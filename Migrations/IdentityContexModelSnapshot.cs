@@ -15,7 +15,7 @@ namespace MyBlog.Migrations
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
-            modelBuilder.HasAnnotation("ProductVersion", "10.0.9");
+            modelBuilder.HasAnnotation("ProductVersion", "9.0.9");
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
                 {
@@ -329,7 +329,7 @@ namespace MyBlog.Migrations
                         new
                         {
                             ProjectId = 6,
-                            CategoryId = 4,
+                            CategoryId = 1,
                             Description = "Restoran ve kafeler için kategori, ürün, fiyat ve görsel yönetimi bulunan; müşterilerin QR kod üzerinden menüye kolayca ulaşmasını sağlayan dinamik web uygulaması.",
                             Image = "qr.jpg",
                             Link = "https://github.com/omerapaydin",
